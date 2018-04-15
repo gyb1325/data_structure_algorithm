@@ -329,67 +329,82 @@ class SingleLinkedList:
         start2 = p.link
         p.link = None
         return start2
+    
+    def concatenate(self, list2):
+        if self.start == None:
+            self.start = list.start
+            return
+        if list2.start == None:
+            return
+        p = self.start
+        while p.link is not None:
+            p = p.link
+        p.link = list2.start
+        
     ########################Construction Part#########################3
 list = SingleLinkedList()
 list.create_list()
 
 
-while True:
-    option = int(input("Enter your choice :"))
-    if option == 1:
-        list.display_list()
-    elif option == 2:
-        list.count_nodes()
-    elif option == 3:
-        data = int(input("Enter the element to be searched : "))
-        list.search(data)
-    elif option == 4:
-        data = int(input("Enter the element to be inserted : "))
-        list.insert_in_beginning(data)
-    elif option == 5:
-        data = int(input("Enter the element to be inserted : "))
-        list.insert_at_end(data)
-    elif option == 6:
-        data = int(input("enter the element to be inserted : "))
-        x = int(input("enter the position at wich to insert"))
-        list.insert_after(data,x)
-    elif option == 7:
-        data = int(input("enter the element to be inserted : "))
-        x = int(input("enter the position at wich to insert"))
-        list.insert_before(data,x)
-    elif option == 8:
-        data = int(input("enter the element to be inserted : "))
-        k = int(input("enter the position at wich to insert"))
-        list.insert_at_position(data,k)
-    elif option == 9:
-        list.delete_first_node()
-    elif option == 10:
-        list.delete_last_node()
-    elif option == 11:
-        x = int(input("enter the element to be deleted "))
-        list.delete_node(x)
-    elif option ==12:
-        list.reverse_list()
-    elif option == 13:
-        list.bubble_sort_exdata()
-    elif option == 14:
-        list.bubble_sort_exlinks()
-    elif option == 15:
-        list.merge_sort()
-    elif option == 16:
-        data = int(input("The number in the postion you want to insert the cycles"))
-        list.insert_cycle(data)
-    elif option == 17:
-        cyc_truth = list.has_cycle()
-        if cyc_truth is True:
-            print("it has cycle")
-        else:
-            print("It does not have cycle")
-    elif option == 18:
-        list.remove_cycle()
+#while True:
+#    option = int(input("Enter your choice :"))
+#    if option == 1:
+#        list.display_list()
+#    elif option == 2:
+#        list.count_nodes()
+#    elif option == 3:
+#        data = int(input("Enter the element to be searched : "))
+#        list.search(data)
+#    elif option == 4:
+#        data = int(input("Enter the element to be inserted : "))
+#        list.insert_in_beginning(data)
+#    elif option == 5:
+#        data = int(input("Enter the element to be inserted : "))
+#        list.insert_at_end(data)
+#    elif option == 6:
+#        data = int(input("enter the element to be inserted : "))
+#        x = int(input("enter the position at wich to insert"))
+#        list.insert_after(data,x)
+#    elif option == 7:
+#        data = int(input("enter the element to be inserted : "))
+#        x = int(input("enter the position at wich to insert"))
+#        list.insert_before(data,x)
+#    elif option == 8:
+#        data = int(input("enter the element to be inserted : "))
+#        k = int(input("enter the position at wich to insert"))
+#        list.insert_at_position(data,k)
+#    elif option == 9:
+#        list.delete_first_node()
+#    elif option == 10:
+#        list.delete_last_node()
+#    elif option == 11:
+#        x = int(input("enter the element to be deleted "))
+#        list.delete_node(x)
+#    elif option ==12:
+#        list.reverse_list()
+#    elif option == 13:
+#        list.bubble_sort_exdata()
+#    elif option == 14:
+#        list.bubble_sort_exlinks()
+#    elif option == 15:
+#        list.merge_sort()
+#    elif option == 16:
+#        data = int(input("The number in the postion you want to insert the cycles"))
+#        list.insert_cycle(data)
+#    elif option == 17:
+#        cyc_truth = list.has_cycle()
+#        if cyc_truth is True:
+#            print("it has cycle")
+#        else:
+#            print("It does not have cycle")
+#    elif option == 18:
+#        list.remove_cycle()
     
 #list1 = SingleLinkedList()
 #list2 = SingleLinkedList()
+#list1.create_list()
+#list2.create_list()
+#list1.concatenate(list2)
 #list1.create_list()
 #list2.create_list()
 #
