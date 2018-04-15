@@ -131,7 +131,19 @@ class DoubleLinkList:
             else:
                 print(x, "not found")
 
-        
+    def reverse_list(self):
+        if self.start is None:
+            return
+        p1 = self.start
+        p2 = self.start.next 
+        p1.next = None
+        p1.prev = p2
+        while p2 is not None:
+            p2.prev = p2.next
+            p2.next = p1
+            p1 = p2 
+            p2 = p2.prev
+        self.start = p1
         
     
     
@@ -141,7 +153,7 @@ while True:
     option = int(input("Enter your choice :"))
     if option == 1:
         list.display_list()
-    elif option == 3:
+    elif option == 2:
         data = int(input("Enter the element to be inserted : "))
         list.insert_in_beginning(data)
     elif option == 3:
@@ -162,6 +174,7 @@ while True:
     elif option == 8:
         x = int(input("enter the element to be deleted "))
         list.delete_node(x)
-
+    elif option == 9:
+        list.reverse_list()
 
 
