@@ -101,6 +101,16 @@ class CircularLinkList(object):
                 p.link = p.link.link
                 if self.last.info == x:
                     self.last = p 
+    def concatenate(self, list2):
+        if self.last is None:
+            self.last = list2.last
+            return
+        if list2.last is None:
+            return
+        p = self.last.link
+        self.last.link = list2.last.link
+        list2.last.link = p
+        self.last = list2.last
         
         
         
