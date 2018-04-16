@@ -21,7 +21,7 @@ def infix_to_postfix(infix):
                 postfix = postfix+next
                 next = st.pop()
         elif symbol in "+-*/%^":
-            while not st.is_empty() and precedence(st.peak())>=precedence(symbol):
+            while not st.is_empty() and precedence(st.peek())>=precedence(symbol):
                 next = st.pop()
                 postfix = postfix + next
             st.push(symbol)
