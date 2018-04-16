@@ -39,8 +39,27 @@ def precedence(symbol):
         return 2
     elif symbol in '^':
         return 3
-    
-    
+def evaluate_postfix(postfix):
+    st = Stack()
+    for symbol in postfix:
+        if symbol.isdigit():
+            st.push(int(symbol))
+        else:
+            x= st.pop()
+            y = st.pop()
+            if symbol == '+':
+                st.push(y+x)
+            elif symbol == '-':
+                st.push(y-x)    
+            elif symbol == '*':
+                st.push(y*x)
+            elif symbol == '/':
+                st.push(y/x)    
+            elif symbol == '^':
+                st.push(y**x)    
+            elif symbol == '%':
+                st.push(y%x)
+    return st.peek()
     
     
 while True:
@@ -50,4 +69,6 @@ while True:
         break
     postfix = infix_to_postfix(expression)
     print("Postfix expression is ", postfix)
-            
+    value = evaluate_postfix(postfix)
+    #print("Postfix expression is ", postfix)
+    print("Postfix expression is ", value)        
