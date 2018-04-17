@@ -61,6 +61,7 @@ class BinaryTree:
                 qu.append(p.rchild)
     def findheight(self):
         return self._findheight(self.root)
+
     def _findheight(self, p):
         if p is None:
             return 0
@@ -85,5 +86,4 @@ bt.create_tree()
 bt.preorder()
 bt.inorder()
 bt.postorder()
-bt.levelorder(
-        )
+bt.levelorder()
