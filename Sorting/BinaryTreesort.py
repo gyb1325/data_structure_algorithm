@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Created on Wed Apr 18 19:30:11 2018
+
+@author: guyo
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Created on Mon Apr 16 20:27:06 2018
 
 @author: guyo
@@ -214,3 +221,27 @@ class BinarySearchTree:
             return hL+1
         else:
             return hR+1
+        
+BST = BinarySearchTree()        
+list = [6,3,1,5,9,8]
+for i in range(len(list)):
+    BST.insert(list[i])
+BST.inorder()
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
